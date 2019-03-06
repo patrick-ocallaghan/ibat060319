@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<!--onclick-->
+<button onclick="document.getElementById('demo').innerHTML=Date()">The time is?</button>
+
+<p id="demo"></p>
+
+
+<!--onclick inner change itself-->
+<button onclick="this.innerHTML=Date()">The time is?</button>
+
+
+<!--Click to call function-->
+<h2>Click the button to display the date.</h2>
+
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+function displayDate() {
+  document.getElementById("demo2").innerHTML = Date();
+}
+</script>
+
+<p id="demo2"></p>
+
+
+<h2>Hover div mouseover</h2>
+<div onmouseover="this.style.backgroundColor='red'">myDIV.</div>
+
+
+</body>
+</html>

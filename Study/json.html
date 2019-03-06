@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+
+    <!--Stringify an Object-->
+    <h2>Create JSON string from a JavaScript object.</h2>
+    <p id="demo"></p>
+    <script>
+        var obj = { name: "John", age: 30, city: "New York" };
+        var myJSON = JSON.stringify(obj);
+        document.getElementById("demo").innerHTML = myJSON;
+    </script>
+
+
+    <!--Stringify Array-->
+    <h2>Create JSON string from a JavaScript array.</h2>
+    <p id="demo2"></p>
+    <script>
+
+        var arr = ["John", "Peter", "Sally", "Jane"];
+        var myJSON = JSON.stringify(arr);
+        document.getElementById("demo2").innerHTML = myJSON;
+
+    </script>
+
+
+    <!--Stringify Dates-->
+    <h2>JSON.stringify will convert any date objects into strings.</h2>
+
+    <p id="demo3"></p>
+
+    <script>
+        var obj = { name: "John", today: new Date(), city: "New York" };
+        var myJSON = JSON.stringify(obj);
+        document.getElementById("demo3").innerHTML = myJSON;
+    </script>
+
+    <!--Print json object-->
+    <h2>Access a JSON object using dot notation or square brackets:</h2>
+
+    <p id="demo4"></p>
+
+    <script>
+        var myObj, x;
+        myObj = { "name": "John", "age": 30, "car": null };
+        x = myObj.name;
+        //x = myObj["name"];
+        document.getElementById("demo4").innerHTML = x;
+    </script>
+
+
+
+    <h2>How to access nested JSON objects.</h2>
+
+    <p id="demo5"></p>
+
+    <script>
+        var myObj = {
+            "name": "John",
+            "age": 30,
+            "cars": {
+                "car1": "Ford",
+                "car2": "BMW",
+                "car3": "Fiat"
+            }
+        }
+        document.getElementById("demo5").innerHTML += myObj.cars.car2 + "<br>";
+        //or:
+        document.getElementById("demo5").innerHTML += myObj.cars["car2"];
+    </script>
+
+
+    <h2>Access an array value of a JSON object.</h2>
+    <p id="demo6"></p>
+    <script>
+        var myObj, x;
+        myObj = {
+            "name": "John",
+            "age": 30,
+            "cars": ["Ford", "BMW", "Fiat"]
+        };
+        x = myObj.cars[0];
+        document.getElementById("demo6").innerHTML = x;
+    </script>
+
+
+    <h2>Looping through an array using a for loop:</h2>
+
+    <p id="demo7"></p>
+
+    <script>
+        var myObj, i, x = "";
+        myObj = {
+          "name":"John",
+          "age":30,
+          "cars":[ "Ford", "BMW", "Fiat" ]
+        };
+        
+        for (i = 0; i < myObj.cars.length; i++) {
+          x += myObj.cars[i] + "<br>";
+        }
+        document.getElementById("demo7").innerHTML = x;
+        </script>
+
+
+
+<h2>Click the Button.</h2>
+<p>A script tag with a src attribute is created and placed in the document.</p>
+<p>The PHP file returns a call to a function with the JSON object as a parameter.</p>
+
+<button onclick="clickButton()">Click me!</button>
+
+<p id="demo"></p>
+
+<script>
+function clickButton() {
+  var s = document.createElement("script");
+  s.src = "https://www.w3schools.com/js/demo_jsonp.php";
+  document.body.appendChild(s);
+}
+
+function myFunc(myObj) {
+  document.getElementById("demo").innerHTML = myObj.name;
+}
+</script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
